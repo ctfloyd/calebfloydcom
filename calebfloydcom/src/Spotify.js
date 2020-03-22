@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Social extends Component {
+class Spotify extends Component {
 
   constructor(props) {
       super(props);
@@ -12,7 +12,12 @@ class Social extends Component {
     request.onreadystatechange = (e) => {
         e = e.target;
         if (e.readyState === 4 && e.status === 200) {
-            let res = JSON.parse(e.response);
+            let res;
+            try {
+                res = JSON.parse(e.response);
+            } catch(err) {
+                return;
+            }
             let song = res.items[0].track.name;
             let playedAt = res.items[0].played_at;
             let artistsa = res.items[0].track.artists;
@@ -23,13 +28,13 @@ class Social extends Component {
             });
          }
     };
-    request.open("GET", "http://recently-listened-spotify.herokuapp.com/recentlyPlayed");
+    request.open("GET", "/recentlyPlayed/api/recentlyPlayed");
     request.send();
   }
 
   render() {
     if(!this.state.title) {
-        return (<p>I haven't listened to any jams recently, check back later!</p>)
+        return (<p className="spotify">I haven't listened to any jams recently, check back later!</p>)
     }
     let song = this.state.title;
     let artist = this.state.artists[0].name;
@@ -57,9 +62,9 @@ class Social extends Component {
         timeString = deltaHours + " hours ago";
     }
     return (
-        <p>I listened to {song} by <em>{artist}</em>, {timeString}.</p>
+        <p className="spotify">I listened to {song} by <em className="spotify">{artist}</em>, {timeString}.</p>
     );
   }
 }
 
-export default Social;
+export default Spotify;

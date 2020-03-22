@@ -55,7 +55,15 @@ class ExperienceCard extends Component {
     return (
         <div className="card-container" ref={this.containerRef}>
             <div className="card zoom" onClick={this.handleClick}>
-                <img className="descimg" src={this.props.img} alt={this.props.modal ? this.props.modal.header : ""}></img>
+                {
+                this.props.img &&
+                  <img className="descimg" src={this.props.img} alt={this.props.modal ? this.props.modal.header : ""}></img>
+                }
+                {
+                this.props.altImg &&
+                  <h2 className="descAlt">{this.props.altImg}</h2>
+                }
+
                 <p className="description">{this.props.desc}</p>
             </div>
             {

@@ -8,7 +8,7 @@ class Modal extends Component {
             <div className="modalContainer" id={this.props.id}>
                 <h1 className="modalHeader">{this.props.header}</h1>
                 <h3 className="modalYear">{this.props.year}</h3>
-                <hr></hr>
+                <hr className="modalDivider"></hr>
                 <p className="modalDesc">{this.props.desc}</p>
             </div>
         </div>

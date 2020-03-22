@@ -4,22 +4,18 @@ class TypingText extends Component {
 
   constructor(props) {
       super(props);
-      this.state = {text: "Caleb.", fragment: "", drawCursor: true, drawHighlight: false};
+      this.state = {text: "Caleb.", fragment: "", drawCursor: true, drawHighlight: false, textIndex: 1};
   }
 
   chooseNewText() {
       this.setState(function(state, props){
-          let currentText = state.text;
-          let nextText = currentText;
-          while(currentText === nextText && props.options.length > 1) {
-            let nextIndex = Math.floor(Math.random() * props.options.length)
-            nextText = this.props.options[nextIndex];
-          }
+          let nextText = props.options[state.textIndex];
           return {
               text: nextText,
               fragment: "",
               time: 0,
-              drawHighlight: false
+              drawHighlight: false,
+              textIndex: (state.textIndex + 1) % props.options.length
           }
       });
   }
