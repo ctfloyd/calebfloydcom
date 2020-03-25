@@ -12,16 +12,16 @@ export function doAnimate(id, state) {
     let targetY;
     if(viewPortWidth <= 600) {
         targetX = 0.26 * viewPortWidth;
-        targetY = 0.3 * viewPortHeight;
+        targetY = 0.4 * viewPortHeight + window.pageYOffset;
     } else if(viewPortWidth > 600 && viewPortWidth <= 767) {
         targetX = 0.3 * viewPortWidth;
-        targetY = 0.3 * viewPortHeight;
+        targetY = 0.3 * viewPortHeight + window.pageYOffset;
     } else if(viewPortWidth >= 768 && viewPortWidth <= 991) {
         targetX = 0.3 * viewPortWidth;
-        targetY = 0.35 * viewPortHeight;
+        targetY = 0.35 * viewPortHeight + window.pageYOffset;
     } else if (viewPortWidth >= 992 && viewPortWidth <= 1199) {
         targetX = 0.37 * viewPortWidth;
-        targetY = 0.35 * viewPortHeight;
+        targetY = 0.35 * viewPortHeight + + window.pageYOffset;
     } else {
         targetX = viewPortWidth / 2;
         targetY = viewPortHeight / 2;

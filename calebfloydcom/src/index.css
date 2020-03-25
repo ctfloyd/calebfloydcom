@@ -16,18 +16,21 @@ body {
 }
 
 .link {
-    color: #E8F7EE;
+    color: #7fecf4;
     font-size: .7em;
+    text-decoration: none;
 }
 
 .link:hover {
     color: #e1dd8f;
     font-size: .7em;
+    text-decoration: none;
 }
 
 .link:visited {
-    color: #a5a267;
+    color: #5ca5aa;
     font-size: .7em;
+    text-decoration: none;
 }
 
 .modalContainer {
@@ -73,6 +76,7 @@ body {
     padding: 8px;
     text-align: justify;
     font-size: 0.75em;
+    color: #E8F7EE
 }
 
 .social, .pad {
@@ -190,6 +194,20 @@ body {
     margin-top: 3vh;
 }
 
+.modalYear {
+    padding-bottom: 01vh;
+}
+
+#letters {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 1vh;
+}
+
+.alt-link {
+    margin-left: 2vw;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     #avatar {
@@ -247,13 +265,25 @@ body {
 
     .modalContainer {
         width: 95%;
-        height: 90%;
+        height: 75%;
     }
 
     #footer {
         height: 5vh;
         position: relative;
         bottom: 0;
+    }
+
+    .modalHeader {
+        font-size: 0.8em;
+    }
+
+    .modalYear {
+        font-size: 0.7em;
+    }
+
+    .modalDesc {
+        font-size: 0.65em;
     }
 }
 
@@ -281,6 +311,14 @@ body {
         width: 85%;
         height: 70%
     }
+
+    .modalHeader {
+        font-size: 1.2em;
+    }
+
+    .modalYear {
+        font-size: 1em;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -307,6 +345,10 @@ body {
         width: 90%;
         height: 65%;
     }
+
+    .modalHeader {
+        font-size: 1.6em;
+    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -328,12 +370,22 @@ body {
         width: 70%;
         height: 60%;
     }
+
+    .modalHeader {
+        font-size: 1.5em;
+    }
+
+
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
     #avatar {
         font-size: 1.7em;
+    }
+
+    .modalHeader {
+        font-size: 1.5em;
     }
 
 }

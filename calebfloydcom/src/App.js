@@ -24,20 +24,25 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({capturedDomClick: false});
+    // this.setState({wasTouch: false});
   }
 
   render() {
     let cModal = {
         header:"Cruiser's Yachts", 
         year:"IS Intern - 2017-2020", 
-        desc: "When I was first employed at Cruiser's Yachts I thought I was signing up for an intern position, but it quickly turned out to be so much more." +
+        desc: ["When I was first employed at Cruiser's Yachts I thought I was signing up for an intern position, but it quickly turned out to be so much more." +
               " The previous IS Manager had been released from the company and the previous semi-retired manager came back to fill the position for a while. About" + 
               " a week after I had arrived the previous manager decided to take off and leave me in the position all alone. During this time I was the go-to individual" +
               " to handle all things systems. Imagine sticking an (at that time) 18 year old kid in charge of an IBM i series. This system was old, like real old." +
               " We're talking at least double my age. Needless to say I filled the position (and didn't burn anything down!) for about two months before a new IS Manager" +
               " was hired. I still work closely with the new manager today and I am able to fill a much more intern'ish' role with more emphasis on learning and developing" + 
               " new skills. However, being thrown to the woles in the begining has put me in a position where I have a lot of knowledge about the systems and has provided me" +
-              " with the opportunity to voice my opinion on the company's technological infrastructure decisions. (Not too shabby, huh?)",
+              " with the opportunity to voice my opinion on the company's technological infrastructure decisions. (Not too shabby, huh?) Attatched below are two letters of recommendation given to me.",
+              <div id="letters"> 
+                <Social icon={"fas fa-download"} fwdClass=" " linkFwd="link alt-link" alt="Letter One" to="./public/letterOne.pdf" />
+                <Social icon={"fas fa-download"} fwdClass=" " linkFwd="link alt-link" alt="Letter Two" to="./public/letterTwo.pdf" />
+              </div>],
         id: "cruisers"
     }
     let mModal = {
@@ -53,7 +58,7 @@ class App extends Component {
     }
     let iModal = {
       header:"Intel 8080 Emulator",
-      year:[<a className="link" href="https://www.github.com/ctfloyd/8080Emulator">https://www.github.com/ctfloyd/8080Emulator</a>],
+      year:[<a className="link" href="https://www.github.com/ctfloyd/8080Emulator"><i className="fab fa-github" /> https://www.github.com/ctfloyd/8080Emulator</a>],
       desc: "This projet was my first 'real' project. It was one where I had to spend a lot of time learning before I was even able to begin writing code. The end" +
             " goal for this project was to be able to play space invaders on an emulated 8080 and other hardware components. I got as far as writing a functioning" +
             " Intel 8080 emulator (which is of course what the name of the project would imply). I have recently contemplated picking this project back up and" +
@@ -62,7 +67,7 @@ class App extends Component {
     }
     let lModal = {
       header:"LC3EZEdit",
-      year: [<a className="link" href="https://github.com/ctfloyd/LC3EzEdit">https://github.com/ctfloyd/LC3EzEdit</a>],
+      year: [<a className="link" href="https://github.com/ctfloyd/LC3EzEdit"><i className="fab fa-github" /> https://github.com/ctfloyd/LC3EzEdit</a>],
       desc: "I had a lot of motivation and inspiration when I was writing this project. I was in an intro to computer architecture class which used the 'toy'" +
             " archictecture called LC-3. The class turned out to be pretty heavy in writing LC-3 assembly code, but the best tool available were some editor" +
             " that the developers of LC-3 came out with many years ago (there was also a plugin for vscode that did syntax highlighting). This editor lacked" +
@@ -75,7 +80,7 @@ class App extends Component {
 
     let qModal = {
       header: "Quote Jar",
-      year: [<a className="link" href="https://github.com/ctfloyd/quotejar">https://github.com/ctfloyd/quotejar</a>],
+      year: [<a className="link" href="https://github.com/ctfloyd/quotejar"><i className="fab fa-github" /> https://github.com/ctfloyd/quotejar</a>],
       desc: "This project was more a gift to my girlfriend than anything. It's a short and sweet project to store all the funny quotes that we share" +
             " with each other. She claims that I 'radiate tiktok energy', but I don't agree with her. Anyways, this was a couple hour project that helped" +
             " me explore using sqlite dataebases with express servers. (I used prepared statements, so don't you even go thinking of trying to find where this" +
@@ -86,7 +91,7 @@ class App extends Component {
 
     let bModal = {
       header:"BuckIt",
-      year: [<a className="link" href="https://devpost.com/software/buckit-vybder">https://devpost.com/software/buckit-vybder</a>],
+      year: [<a className="link" href="https://devpost.com/software/buckit-vybder"><i className="fas fa-code" /> https://devpost.com/software/buckit-vybder</a>],
       desc: "BuckIt was inspired by the hack-a-thon's theme which was sustainability. BuckIt is a social media platform where like tinder with peer-reviewed" +
             " sustinable actions. The thought behind it was to give some sort of incentive either a small payout or other incentives such as a free slice of" +
             " pizza at a campus dining hall. We also gamified sustainable actions by creating a local leaderboard with players around you to see who could get the" +
@@ -99,7 +104,7 @@ class App extends Component {
 
     let hModal = {
       header:"DJ Lil Lex",
-      year: [<a className="link" href="https://devpost.com/software/dj-lil-lex">https://devpost.com/software/dj-lil-lex</a>],
+      year: [<a className="link" href="https://devpost.com/software/dj-lil-lex"><i className="fas fa-code" /> https://devpost.com/software/dj-lil-lex</a>],
       desc: "DJ Lil Lex was a product of my first hack-a-thon ever. My team and I went into the venue having no ideas whatsoever. I think we were just twiddiling our" +
             " thumbs until we decided to look at what hardware was provided. One of the options was Amazon Alexa, so we rented it without much of a plan." +
             " Eventually one of us suggested, as a joke, that it would be funny to make Alexa rap. I thought it was a great idea and convinced the rest of the" +
@@ -113,15 +118,15 @@ class App extends Component {
 
     let oModal = {
       header:"Open Source Contributions",
-      year: [<a className="link" href="https://www.github.com/ctfloyd">https://www.github.com/ctfloyd</a>],
+      year: [<a className="link" href="https://www.github.com/ctfloyd"><i className="fab fa-github" /> https://www.github.com/ctfloyd</a>],
       desc: "I have made a couple of small contributions to open source projects. My favorite project that I've contributed to so far is SerenityOS." +
             " Although I haven't made very many contributions as of yet, I would like to expand more into this space. For now, this is more of a placeholder" +
-            " to give myself some accountability to contribute more to open source. I will update this regularly with more project that I contribute to.",
+            " to give myself some accountability to contribute more to open source. I look forward to updating this section when I find a passion project in the open source community.",
       id: "opensource"
     }
 
     return (
-        <div id="landing" onMouseUp={this.handleClick}>
+        <div id="landing" onClick={this.handleClick}>
             <Avatar src={logo} alt="Picture of me!"/>
             <div id="socialContainer">
                 <p style={{display: "inline-block"}}>Caleb Floyd</p>
@@ -130,7 +135,7 @@ class App extends Component {
                 <i className="fas fa-circle pad"></i>
                 <Social icon={"fab fa-github"} to="http://www.github.com/ctfloyd/"/>
                 <i className="fas fa-circle pad"></i>
-                <Social icon={"fab fa-linkedin-in"} to="#" />
+                <Social icon={"fab fa-linkedin-in"} to="https://www.linkedin.com/in/caleb-floyd-a658591a5/" />
                 <i className="fas fa-circle pad"></i>
                 <Social icon={"fab fa-twitter"} to="http://www.twitter.com/CalebFloyd17/" />
                 <i className="fas fa-circle pad"></i>
