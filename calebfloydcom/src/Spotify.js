@@ -28,7 +28,7 @@ class Spotify extends Component {
             });
          }
     };
-    request.open("GET", "/recentlyPlayed/api/recentlyPlayed");
+    request.open("GET", "https://ytttxcivxh.execute-api.us-east-2.amazonaws.com/default/calebfloydcom-spotify-now");
     request.send();
   }
 

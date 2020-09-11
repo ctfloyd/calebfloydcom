@@ -29,63 +29,92 @@ class App extends Component {
 
   render() {
     let cModal = {
-        header:"Cruiser's Yachts", 
-        year:"IS Intern - 2017-2020", 
-        desc: ["When I was first employed at Cruiser's Yachts I thought I was signing up for an intern position, but it quickly turned out to be so much more." +
-              " The previous IS Manager had been released from the company and the previous semi-retired manager came back to fill the position for a while. About" + 
-              " a week after I had arrived the previous manager decided to take off and leave me in the position all alone. During this time I was the go-to individual" +
-              " to handle all things systems. Imagine sticking an (at that time) 18 year old kid in charge of an IBM i series. This system was old, like real old." +
-              " We're talking at least double my age. Needless to say I filled the position (and didn't burn anything down!) for about two months before a new IS Manager" +
-              " was hired. I still work closely with the new manager today and I am able to fill a much more intern'ish' role with more emphasis on learning and developing" + 
-              " new skills. However, being thrown to the woles in the begining has put me in a position where I have a lot of knowledge about the systems and has provided me" +
-              " with the opportunity to voice my opinion on the company's technological infrastructure decisions. (Not too shabby, huh?) Attatched below are two letters of recommendation given to me.",
+        header: "Cruiser's Yachts", 
+        year: "IS Intern - 2017-2020", 
+        desc: [
+              "I applied at Cruiser’s Yachts for an “IS Intern” position, but it quickly turned out to be so much more. The company was in desperate need for" +
+              " someone to take on the day to day operations of the technology infrastructure because the previous employee would only come in when he was" +
+              " available from retirement. I quickly learned that I was in a position where I would not be given much guidance and it was my job to pilot the" + 
+              " company to success until they found someone to permanently take over the previous role. Everyday was a learning experience as I was interacting" +
+              " with technology that was older than me (dusty 20-year-old switches, IBM I series) just to name a few. I even found an old Compaq Portable 3" +
+              " sitting in some old cupboards. Nonetheless, I was able to answer the requests of users and respond to upper management during their two-month" + 
+              " transition period. Most of my time spent during this period was documenting technological procedures and taking inventory of our assets to make" +
+              " the job for the next employee much easier.",
+              <br />,<br />,
+              "When Cruisers acquired a permanent employee for the position my role in the company changed for the better. Together we started" +
+              " implementing new technologies. Just to name a few I setup: Lansweeper, gigabit core switches, Windows 10 for ~200 users, Ubiquity Access" +
+              " Points, scripted automatic backup solutions, and many many more things. Although the job was not a perfect fit for what I wanted to do in" +
+              " the future (software development), it provided me with ample opportunity to expand my skillsets in other areas. I learned many skills in" + 
+              " communication (specifically dealing with frustrated users), persistence and dedication (seeing projects through from design, implementation," + 
+              " to maintenance). Most importantly I learned that it is ok to not always know the solution right away but having a good mindset and the" +
+              " ability to learn often leads you down the path to success.",
               <div id="letters"> 
                 <Social icon={"fas fa-download"} fwdClass=" " linkFwd="link alt-link" alt="Letter One" to="./public/letterOne.pdf" />
                 <Social icon={"fas fa-download"} fwdClass=" " linkFwd="link alt-link" alt="Letter Two" to="./public/letterTwo.pdf" />
-              </div>],
+              </div>
+            ],
         id: "cruisers"
     }
     let mModal = {
-        header:"University of Wisconsin-Madison",
-        year:"2017 - 2020",
-        desc: `As of writing this (3/2020) I am currently a student at the University of Wisconsin-Madison studying computer science. I have one more semester before` +
-              ` graduation. My first two years at campus I enjoyed volunteering at Reach-A-Child, a local non-profit organization that helps provide books to children` +
-              ` who face a crisis. My final two years at UW-Madison have been spent finding an identity for myself and who I want to be, while delving deeper into my` +
-              ` passion for computer science and software development. Some notable classes that I have taken at Madison include:\n\tAlgorithms, Data Structures,` +
-              ` Software Security, Operating Systems, and Computer Graphics.\nI plan on taking a software engineering and/or android developemnt course during my last` +
-              ` semester. Each of the classes listed above have had very cool projects that I am unfortunately not allowed to share. :(`,
+        header: "University of Wisconsin-Madison",
+        year: "2017 - 2020",
+        desc: "I will be graduating from the University of Wisconsin-Madison in December 2020. I enjoyed my team here studying as a Computer Science major" +
+              " with a certificate in Mathematics. I have learned so much from the very talented professors and peers here, both personally and" +
+              " professionally. The classes that I have found the most value from include: Algorithms, Data Structure, Software Security," + 
+              " Software Engineering, Operating Systems, Computer Graphics, Compilers, and Artificial Intelligence. All these courses have provided a rich" + 
+              " and deepened understanding of the systems that I work with every day. I have an attention for detail, so I enjoyed the courses going from" + 
+              " bits and bytes all the way up to modern software practices.",
         id: "madison"
+    }
+    let muddyModal = {
+      header: "MuddyScript",
+      year: [<a className="link" href="https://www.github.com/ctfloyd/Muddscript"><i className="fab fa-github" /> https://www.github.com/ctfloyd/Muddyscript</a>],
+      desc: "This is one project that I have put a considerable amount of time into" + 
+      " throughout 2020. This project started out as just a small idea, I wanted to" +
+      " implement a Telnet client that you could connect to MUDs (Multi-User Dungeons)" +
+      " and provide a scripting interface that allows you to interact with the incoming" +
+      " messages as well as modify the user interface of the program to your liking." +
+      " While developing this project, I put an emphasis on trying to create a clean" +
+      " code base and tried to use the tactics that I thought were the best at the" +
+      " time. I have found immediate payoff in doing so, as the code base is more" +
+      " pleasurable to work with (but it is far from perfect). So far, I have a fully" +
+      " implanted terminal swing component that supports ANSI escape sequences, a basic" +
+      " way to take a frame of data from the telnet client and pass it along to user" +
+      " scripts, some intractability between user scripts and the telnet client, and a" +
+      " pathfinding algorithm by loading the MUDs database and tracking the optimal" +
+      " path between two rooms.",
+      id: "muddyscript"
     }
     let iModal = {
       header:"Intel 8080 Emulator",
       year:[<a className="link" href="https://www.github.com/ctfloyd/8080Emulator"><i className="fab fa-github" /> https://www.github.com/ctfloyd/8080Emulator</a>],
-      desc: "This projet was my first 'real' project. It was one where I had to spend a lot of time learning before I was even able to begin writing code. The end" +
-            " goal for this project was to be able to play space invaders on an emulated 8080 and other hardware components. I got as far as writing a functioning" +
-            " Intel 8080 emulator (which is of course what the name of the project would imply). I have recently contemplated picking this project back up and" +
-            " finishing it off strong, but instead I've decided to go big or go home and write an emulator for x86 instead (also on github!).",
+      desc: "The Intel 8080 Emulator was one of my first substantial programming projects that I took on outside of school. Before" +
+      " this time, I was developing simple scripts that could get the job done for what I needed, but I had not looked at" +
+      " software from a scalable and maintainable view. I also used this project as an introduction to the intel instruction" +
+      " sets. The CPU was almost fully implemented (except for modifying the nibble flag on the appropriate instructions). The" +
+      " CPU was able to completely pass tests written for the Intel 8080 at the time. If I ever circle back to this project, I" +
+      " would like to implement I/O to the point where I would be able to play space invaders on it.",
       id: "8080emu"
     }
     let lModal = {
       header:"LC3EZEdit",
       year: [<a className="link" href="https://github.com/ctfloyd/LC3EzEdit"><i className="fab fa-github" /> https://github.com/ctfloyd/LC3EzEdit</a>],
-      desc: "I had a lot of motivation and inspiration when I was writing this project. I was in an intro to computer architecture class which used the 'toy'" +
-            " archictecture called LC-3. The class turned out to be pretty heavy in writing LC-3 assembly code, but the best tool available were some editor" +
-            " that the developers of LC-3 came out with many years ago (there was also a plugin for vscode that did syntax highlighting). This editor lacked" +
-            " critical features such as syntax highlighting, assembly instruction syntax and formatting reminders, as well as autocomplete. Needless to say" +
-            " I quickly implemented all of these features in an editor of my own one weekend and writing LC-3 assembly was never the same since. Sounds great" +
-            " but the implementation details of the project are something that should probably be looked at again. Inexperience led to some bad decisions" +
-            " like putting syntax highlighting on the same thread as keyboard input (I said it worked, not that it worked well (:), but at least I learned something from it!",
+      desc: "Whenever you read programming inspiration articles, they always say to fix something that would make your life easier." +
+      " In this project I did this that. I was taking a class that was introducing computer architecture using a fake" +
+      " architecture called Little Computer 3 (LC-3). Throughout the course we were required to write assembly code, but the" +
+      " only existing tools were very limited and was like editing in a notepad. In my attempt to fix this, I wrote basic" +
+      " editing software that included syntax highlighting, pattern matching, assembly instruction hints (think IntelliSense)," +
+      " and autocompletion.",
       id: "ezedit"
     }
 
     let qModal = {
       header: "Quote Jar",
       year: [<a className="link" href="https://github.com/ctfloyd/quotejar"><i className="fab fa-github" /> https://github.com/ctfloyd/quotejar</a>],
-      desc: "This project was more a gift to my girlfriend than anything. It's a short and sweet project to store all the funny quotes that we share" +
-            " with each other. She claims that I 'radiate tiktok energy', but I don't agree with her. Anyways, this was a couple hour project that helped" +
-            " me explore using sqlite dataebases with express servers. (I used prepared statements, so don't you even go thinking of trying to find where this" +
-            " is hosted and performing an sql injection.) This short piece really helped tie a knot in my understanding of certain web vulnerabilities" +
-            " as well as database integration to a web frontend.",
+      desc: "Among the people that I know, they claim that I ‘radiate TikTok energy’. I do not know if I agree with that statement," +
+      " but when someone gives you a title you take it. In this project I created a simple website with a simple backend that" +
+      " allows you to import a quote and metadata that someone had said. When you land on the page it picks a random quote that" +
+      " has not been seen recently and displays it to you.",
       id: "quotejar"
     }
 
@@ -105,23 +134,23 @@ class App extends Component {
     let hModal = {
       header:"DJ Lil Lex",
       year: [<a className="link" href="https://devpost.com/software/dj-lil-lex"><i className="fas fa-code" /> https://devpost.com/software/dj-lil-lex</a>],
-      desc: "DJ Lil Lex was a product of my first hack-a-thon ever. My team and I went into the venue having no ideas whatsoever. I think we were just twiddiling our" +
-            " thumbs until we decided to look at what hardware was provided. One of the options was Amazon Alexa, so we rented it without much of a plan." +
-            " Eventually one of us suggested, as a joke, that it would be funny to make Alexa rap. I thought it was a great idea and convinced the rest of the" +
-            " team to run with it. Next thing you know we had an entire Alexa skill that would take user input, make a request to the server hosted in my basement" +
-            " that would execute a python script (yikes! really any command/code injection could have happened here) which generated the rap. The script would generate" +
-            " related words to the one given and then choose a couple of those words. It would then scrape lyrics websites looking for words that ended in the user's" +
-            " word and also words that rhymed with the user's word. It was all done in real-time and on the fly (sorry whichever website we scraped, we probably didn't" +
-            " obey your TOS, oops!), but the response time was only somewhere around 15 seconds.",
+      desc: "BuckIt was inspired by the hack-a-thon’s theme, which was sustainability. BuckIt is a social media platform like" +
+      " tinder, but instead of swiping on people you are swiping on sustainable actions. Users would be able to submit" +
+      " themselves performing sustainable actions, and other users would be able to swipe left and right to dictate whether" +
+      " they were performing a sustainable action. If enough people agreed that your action was sustainable, you were" +
+      " incentivized to perform more of these actions through some sort of payout service. The payout system could be partner" +
+      " organizations (like a campus) where a user could earn a free slice of pizza at the dining hall if they performed enough" +
+      " sustainable actions.",
       id: "lilex"
     }
 
     let oModal = {
       header:"Open Source Contributions",
       year: [<a className="link" href="https://www.github.com/ctfloyd"><i className="fab fa-github" /> https://www.github.com/ctfloyd</a>],
-      desc: "I have made a couple of small contributions to open source projects. My favorite project that I've contributed to so far is SerenityOS." +
-            " Although I haven't made very many contributions as of yet, I would like to expand more into this space. For now, this is more of a placeholder" +
-            " to give myself some accountability to contribute more to open source. I look forward to updating this section when I find a passion project in the open source community.",
+      desc: "I have made some small contributions to large open source projects. The project that I have contributed to that I" +
+      " am most interested in is Serenity OS. Serenity is an open source passion project to implement an operating system that" +
+      " tributes to the retro 90’s theme of computing. I look forward to contributing more to open source software as I believe" +
+      " the culture and thought process behind it is something that software developers should promote.",
       id: "opensource"
     }
 
@@ -147,6 +176,7 @@ class App extends Component {
             <div id="expcards">
                 <ExperienceCard capturedDomClick={this.state.capturedDomClick} img={cruisers} desc="IS Intern" modal={cModal}/>
                 <ExperienceCard capturedDomClick={this.state.capturedDomClick} img={madison} desc="Student" modal={mModal}/>
+                <ExperienceCard capturedDomClick={this.state.capturedDomClick} altImg="MuddyScript" desc="Personal Project" modal={muddyModal} />
                 <ExperienceCard capturedDomClick={this.state.capturedDomClick} altImg="Intel 8080 Emulator" desc="Personal Project" modal={iModal} />
                 <ExperienceCard capturedDomClick={this.state.capturedDomClick} altImg="LC3EZEdit" desc="Personal Project" modal={lModal}/>
                 <ExperienceCard capturedDomClick={this.state.capturedDomClick} altImg="Quote Jar" desc="Personal Project" modal={qModal}/>
